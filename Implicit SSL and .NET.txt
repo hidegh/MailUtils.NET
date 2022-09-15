@@ -1,0 +1,16 @@
+﻿NOTE: 
+	Theres a difference between explicit ssl (port 587 or it may be also 25) and the implicit ssl (465).
+	http://blog.falafel.com/the-different-flavors-of-secure-smtp-and-ssl/
+	http://www.rebex.net/kb/tls-ssl-explicit-implicit/default.aspx
+	
+	Explicit SSL is a SMPT standard, while implicit is NOT.
+	Implicit SSL is nowadays widely used, but .NET 4.5.2 does not have it in SmtpClient implemented.
+	Implicit SSL was supported in System.Web.Mail.SmtpMail class, but it;s deprecated since .NET 2.0.
+	
+ALTERNATIVES:
+	Chilkat - it's not free, but possibly the most advanced code...
+	MailKit & MimeKit - autor: jstedfast (appreciate his quick reaction and bugfix)
+	http://equinox.codeplex.com/ - still alpha version and implicit vs explicit ssl is switched...
+		 
+SO THE ONLY POSSIBLE FREE SOLUTION:
+	MailKit - it's author knows what he do, takes case about encoding, etc.
